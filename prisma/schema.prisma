@@ -1,0 +1,70 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated"
+}
+
+
+datasource db {
+  provider = "postgresql"
+}
+
+
+enum ProviderCategory {
+  DOCTOR
+  BARBER
+  TRAINER
+}
+
+enum AppointmentStatus {
+  BOOKED
+  CANCELLED
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+
+  isVerified Boolean @default(false)
+
+  verificationToken      String?
+  verificationTokenExpAt DateTime?
+
+  passwordResetToken      String?
+  passwordResetTokenExpAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  appointments Appointment[]
+}
+
+model Provider {
+  id          String   @id @default(uuid())
+  name        String
+  category    ProviderCategory
+  image       String?
+  description String?
+  createdAt   DateTime @default(now())
+
+  appointments Appointment[]
+}
+
+model Appointment {
+  id         String            @id @default(uuid())
+  userId     String
+  providerId String
+  timeSlot   DateTime
+  status     AppointmentStatus @default(BOOKED)
+  createdAt  DateTime          @default(now())
+
+  user     User     @relation(fields: [userId], references: [id])
+  provider Provider @relation(fields: [providerId], references: [id])
+
+  @@unique([providerId, timeSlot]) 
+}
