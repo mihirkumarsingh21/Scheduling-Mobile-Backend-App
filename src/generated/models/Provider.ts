@@ -30,7 +30,9 @@ export type ProviderMinAggregateOutputType = {
   category: $Enums.ProviderCategory | null
   image: string | null
   description: string | null
+  isDeleted: boolean | null
   createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type ProviderMaxAggregateOutputType = {
@@ -39,7 +41,9 @@ export type ProviderMaxAggregateOutputType = {
   category: $Enums.ProviderCategory | null
   image: string | null
   description: string | null
+  isDeleted: boolean | null
   createdAt: Date | null
+  updatedAt: Date | null
 }
 
 export type ProviderCountAggregateOutputType = {
@@ -48,7 +52,9 @@ export type ProviderCountAggregateOutputType = {
   category: number
   image: number
   description: number
+  isDeleted: number
   createdAt: number
+  updatedAt: number
   _all: number
 }
 
@@ -59,7 +65,9 @@ export type ProviderMinAggregateInputType = {
   category?: true
   image?: true
   description?: true
+  isDeleted?: true
   createdAt?: true
+  updatedAt?: true
 }
 
 export type ProviderMaxAggregateInputType = {
@@ -68,7 +76,9 @@ export type ProviderMaxAggregateInputType = {
   category?: true
   image?: true
   description?: true
+  isDeleted?: true
   createdAt?: true
+  updatedAt?: true
 }
 
 export type ProviderCountAggregateInputType = {
@@ -77,7 +87,9 @@ export type ProviderCountAggregateInputType = {
   category?: true
   image?: true
   description?: true
+  isDeleted?: true
   createdAt?: true
+  updatedAt?: true
   _all?: true
 }
 
@@ -159,7 +171,9 @@ export type ProviderGroupByOutputType = {
   category: $Enums.ProviderCategory
   image: string | null
   description: string | null
+  isDeleted: boolean
   createdAt: Date
+  updatedAt: Date
   _count: ProviderCountAggregateOutputType | null
   _min: ProviderMinAggregateOutputType | null
   _max: ProviderMaxAggregateOutputType | null
@@ -189,7 +203,9 @@ export type ProviderWhereInput = {
   category?: Prisma.EnumProviderCategoryFilter<"Provider"> | $Enums.ProviderCategory
   image?: Prisma.StringNullableFilter<"Provider"> | string | null
   description?: Prisma.StringNullableFilter<"Provider"> | string | null
+  isDeleted?: Prisma.BoolFilter<"Provider"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Provider"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Provider"> | Date | string
   appointments?: Prisma.AppointmentListRelationFilter
 }
 
@@ -199,7 +215,9 @@ export type ProviderOrderByWithRelationInput = {
   category?: Prisma.SortOrder
   image?: Prisma.SortOrderInput | Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
+  isDeleted?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   appointments?: Prisma.AppointmentOrderByRelationAggregateInput
 }
 
@@ -212,7 +230,9 @@ export type ProviderWhereUniqueInput = Prisma.AtLeast<{
   category?: Prisma.EnumProviderCategoryFilter<"Provider"> | $Enums.ProviderCategory
   image?: Prisma.StringNullableFilter<"Provider"> | string | null
   description?: Prisma.StringNullableFilter<"Provider"> | string | null
+  isDeleted?: Prisma.BoolFilter<"Provider"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Provider"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Provider"> | Date | string
   appointments?: Prisma.AppointmentListRelationFilter
 }, "id">
 
@@ -222,7 +242,9 @@ export type ProviderOrderByWithAggregationInput = {
   category?: Prisma.SortOrder
   image?: Prisma.SortOrderInput | Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
+  isDeleted?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
   _count?: Prisma.ProviderCountOrderByAggregateInput
   _max?: Prisma.ProviderMaxOrderByAggregateInput
   _min?: Prisma.ProviderMinOrderByAggregateInput
@@ -237,7 +259,9 @@ export type ProviderScalarWhereWithAggregatesInput = {
   category?: Prisma.EnumProviderCategoryWithAggregatesFilter<"Provider"> | $Enums.ProviderCategory
   image?: Prisma.StringNullableWithAggregatesFilter<"Provider"> | string | null
   description?: Prisma.StringNullableWithAggregatesFilter<"Provider"> | string | null
+  isDeleted?: Prisma.BoolWithAggregatesFilter<"Provider"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Provider"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Provider"> | Date | string
 }
 
 export type ProviderCreateInput = {
@@ -246,7 +270,9 @@ export type ProviderCreateInput = {
   category: $Enums.ProviderCategory
   image?: string | null
   description?: string | null
+  isDeleted?: boolean
   createdAt?: Date | string
+  updatedAt?: Date | string
   appointments?: Prisma.AppointmentCreateNestedManyWithoutProviderInput
 }
 
@@ -256,7 +282,9 @@ export type ProviderUncheckedCreateInput = {
   category: $Enums.ProviderCategory
   image?: string | null
   description?: string | null
+  isDeleted?: boolean
   createdAt?: Date | string
+  updatedAt?: Date | string
   appointments?: Prisma.AppointmentUncheckedCreateNestedManyWithoutProviderInput
 }
 
@@ -266,7 +294,9 @@ export type ProviderUpdateInput = {
   category?: Prisma.EnumProviderCategoryFieldUpdateOperationsInput | $Enums.ProviderCategory
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   appointments?: Prisma.AppointmentUpdateManyWithoutProviderNestedInput
 }
 
@@ -276,7 +306,9 @@ export type ProviderUncheckedUpdateInput = {
   category?: Prisma.EnumProviderCategoryFieldUpdateOperationsInput | $Enums.ProviderCategory
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   appointments?: Prisma.AppointmentUncheckedUpdateManyWithoutProviderNestedInput
 }
 
@@ -286,7 +318,9 @@ export type ProviderCreateManyInput = {
   category: $Enums.ProviderCategory
   image?: string | null
   description?: string | null
+  isDeleted?: boolean
   createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type ProviderUpdateManyMutationInput = {
@@ -295,7 +329,9 @@ export type ProviderUpdateManyMutationInput = {
   category?: Prisma.EnumProviderCategoryFieldUpdateOperationsInput | $Enums.ProviderCategory
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ProviderUncheckedUpdateManyInput = {
@@ -304,7 +340,9 @@ export type ProviderUncheckedUpdateManyInput = {
   category?: Prisma.EnumProviderCategoryFieldUpdateOperationsInput | $Enums.ProviderCategory
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ProviderCountOrderByAggregateInput = {
@@ -313,7 +351,9 @@ export type ProviderCountOrderByAggregateInput = {
   category?: Prisma.SortOrder
   image?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  isDeleted?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type ProviderMaxOrderByAggregateInput = {
@@ -322,7 +362,9 @@ export type ProviderMaxOrderByAggregateInput = {
   category?: Prisma.SortOrder
   image?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  isDeleted?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type ProviderMinOrderByAggregateInput = {
@@ -331,7 +373,9 @@ export type ProviderMinOrderByAggregateInput = {
   category?: Prisma.SortOrder
   image?: Prisma.SortOrder
   description?: Prisma.SortOrder
+  isDeleted?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
 }
 
 export type ProviderScalarRelationFilter = {
@@ -363,7 +407,9 @@ export type ProviderCreateWithoutAppointmentsInput = {
   category: $Enums.ProviderCategory
   image?: string | null
   description?: string | null
+  isDeleted?: boolean
   createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type ProviderUncheckedCreateWithoutAppointmentsInput = {
@@ -372,7 +418,9 @@ export type ProviderUncheckedCreateWithoutAppointmentsInput = {
   category: $Enums.ProviderCategory
   image?: string | null
   description?: string | null
+  isDeleted?: boolean
   createdAt?: Date | string
+  updatedAt?: Date | string
 }
 
 export type ProviderCreateOrConnectWithoutAppointmentsInput = {
@@ -397,7 +445,9 @@ export type ProviderUpdateWithoutAppointmentsInput = {
   category?: Prisma.EnumProviderCategoryFieldUpdateOperationsInput | $Enums.ProviderCategory
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type ProviderUncheckedUpdateWithoutAppointmentsInput = {
@@ -406,7 +456,9 @@ export type ProviderUncheckedUpdateWithoutAppointmentsInput = {
   category?: Prisma.EnumProviderCategoryFieldUpdateOperationsInput | $Enums.ProviderCategory
   image?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -446,7 +498,9 @@ export type ProviderSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   category?: boolean
   image?: boolean
   description?: boolean
+  isDeleted?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
   appointments?: boolean | Prisma.Provider$appointmentsArgs<ExtArgs>
   _count?: boolean | Prisma.ProviderCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["provider"]>
@@ -457,7 +511,9 @@ export type ProviderSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   category?: boolean
   image?: boolean
   description?: boolean
+  isDeleted?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["provider"]>
 
 export type ProviderSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -466,7 +522,9 @@ export type ProviderSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Exte
   category?: boolean
   image?: boolean
   description?: boolean
+  isDeleted?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }, ExtArgs["result"]["provider"]>
 
 export type ProviderSelectScalar = {
@@ -475,10 +533,12 @@ export type ProviderSelectScalar = {
   category?: boolean
   image?: boolean
   description?: boolean
+  isDeleted?: boolean
   createdAt?: boolean
+  updatedAt?: boolean
 }
 
-export type ProviderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "category" | "image" | "description" | "createdAt", ExtArgs["result"]["provider"]>
+export type ProviderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "category" | "image" | "description" | "isDeleted" | "createdAt" | "updatedAt", ExtArgs["result"]["provider"]>
 export type ProviderInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   appointments?: boolean | Prisma.Provider$appointmentsArgs<ExtArgs>
   _count?: boolean | Prisma.ProviderCountOutputTypeDefaultArgs<ExtArgs>
@@ -497,7 +557,9 @@ export type $ProviderPayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     category: $Enums.ProviderCategory
     image: string | null
     description: string | null
+    isDeleted: boolean
     createdAt: Date
+    updatedAt: Date
   }, ExtArgs["result"]["provider"]>
   composites: {}
 }
@@ -927,7 +989,9 @@ export interface ProviderFieldRefs {
   readonly category: Prisma.FieldRef<"Provider", 'ProviderCategory'>
   readonly image: Prisma.FieldRef<"Provider", 'String'>
   readonly description: Prisma.FieldRef<"Provider", 'String'>
+  readonly isDeleted: Prisma.FieldRef<"Provider", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Provider", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"Provider", 'DateTime'>
 }
     
 

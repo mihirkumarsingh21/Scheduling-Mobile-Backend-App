@@ -77,12 +77,15 @@ export const UserScalarFieldEnum = {
   name: 'name',
   email: 'email',
   password: 'password',
+  role: 'role',
   isVerified: 'isVerified',
+  isDeleted: 'isDeleted',
   verificationToken: 'verificationToken',
   verificationTokenExpAt: 'verificationTokenExpAt',
   passwordResetToken: 'passwordResetToken',
   passwordResetTokenExpAt: 'passwordResetTokenExpAt',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -94,7 +97,9 @@ export const ProviderScalarFieldEnum = {
   category: 'category',
   image: 'image',
   description: 'description',
-  createdAt: 'createdAt'
+  isDeleted: 'isDeleted',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type ProviderScalarFieldEnum = (typeof ProviderScalarFieldEnum)[keyof typeof ProviderScalarFieldEnum]
@@ -105,8 +110,11 @@ export const AppointmentScalarFieldEnum = {
   userId: 'userId',
   providerId: 'providerId',
   timeSlot: 'timeSlot',
+  gender: 'gender',
   status: 'status',
-  createdAt: 'createdAt'
+  reason: 'reason',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type AppointmentScalarFieldEnum = (typeof AppointmentScalarFieldEnum)[keyof typeof AppointmentScalarFieldEnum]

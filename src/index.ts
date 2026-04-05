@@ -5,6 +5,8 @@ import cookieParser from "cookie-parser";
 import { connectToDatabase } from "./db/db.js";
 
 import authRoute from "./routes/auth.route.js";
+import providerRoute from "./routes/provider.route.js";
+import appointmentRoute from "./routes/appointment.route.js";
 
 const app = express();
 app.use(express.json());
@@ -13,6 +15,9 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api/v1/auth", authRoute);
+app.use("/api/v1/provider", providerRoute);
+app.use("/api/v1/appointment", appointmentRoute);
+
 
 
 

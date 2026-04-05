@@ -9,6 +9,14 @@
 * 🟢 You can import this file directly.
 */
 
+export const UserRole = {
+  User: 'User',
+  ADMIN: 'ADMIN'
+} as const
+
+export type UserRole = (typeof UserRole)[keyof typeof UserRole]
+
+
 export const ProviderCategory = {
   DOCTOR: 'DOCTOR',
   BARBER: 'BARBER',
@@ -24,3 +32,12 @@ export const AppointmentStatus = {
 } as const
 
 export type AppointmentStatus = (typeof AppointmentStatus)[keyof typeof AppointmentStatus]
+
+
+export const Gender = {
+  MALE: 'MALE',
+  FEMALE: 'FEMALE',
+  OTHER: 'OTHER'
+} as const
+
+export type Gender = (typeof Gender)[keyof typeof Gender]

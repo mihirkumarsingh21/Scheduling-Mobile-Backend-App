@@ -168,7 +168,7 @@ export const login = async (req: Request, res: Response) => {
 
     return res.status(200).json({
       success: true,
-      message: "Login successful",
+      message: `${user.role} login successfully.`,
       data: { token },
     });
   } catch (error: any) {

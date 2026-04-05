@@ -672,12 +672,15 @@ export const UserScalarFieldEnum = {
   name: 'name',
   email: 'email',
   password: 'password',
+  role: 'role',
   isVerified: 'isVerified',
+  isDeleted: 'isDeleted',
   verificationToken: 'verificationToken',
   verificationTokenExpAt: 'verificationTokenExpAt',
   passwordResetToken: 'passwordResetToken',
   passwordResetTokenExpAt: 'passwordResetTokenExpAt',
-  createdAt: 'createdAt'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -689,7 +692,9 @@ export const ProviderScalarFieldEnum = {
   category: 'category',
   image: 'image',
   description: 'description',
-  createdAt: 'createdAt'
+  isDeleted: 'isDeleted',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type ProviderScalarFieldEnum = (typeof ProviderScalarFieldEnum)[keyof typeof ProviderScalarFieldEnum]
@@ -700,8 +705,11 @@ export const AppointmentScalarFieldEnum = {
   userId: 'userId',
   providerId: 'providerId',
   timeSlot: 'timeSlot',
+  gender: 'gender',
   status: 'status',
-  createdAt: 'createdAt'
+  reason: 'reason',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 } as const
 
 export type AppointmentScalarFieldEnum = (typeof AppointmentScalarFieldEnum)[keyof typeof AppointmentScalarFieldEnum]
@@ -752,6 +760,20 @@ export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaMod
 
 
 /**
+ * Reference to a field of type 'UserRole'
+ */
+export type EnumUserRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'UserRole'>
+    
+
+
+/**
+ * Reference to a field of type 'UserRole[]'
+ */
+export type ListEnumUserRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'UserRole[]'>
+    
+
+
+/**
  * Reference to a field of type 'Boolean'
  */
 export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
@@ -783,6 +805,20 @@ export type EnumProviderCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<
  * Reference to a field of type 'ProviderCategory[]'
  */
 export type ListEnumProviderCategoryFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ProviderCategory[]'>
+    
+
+
+/**
+ * Reference to a field of type 'Gender'
+ */
+export type EnumGenderFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Gender'>
+    
+
+
+/**
+ * Reference to a field of type 'Gender[]'
+ */
+export type ListEnumGenderFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Gender[]'>
     
 
 
