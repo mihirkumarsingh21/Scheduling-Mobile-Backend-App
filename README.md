@@ -123,6 +123,25 @@ This project demonstrates **real-world backend development** including authentic
 <img width="1014" height="563" alt="Password Reset Email 1" src="https://github.com/user-attachments/assets/142e1206-12e7-473d-aec7-cebcc1ccbf7b" />
 <img width="1359" height="725" alt="Password Reset Email 2" src="https://github.com/user-attachments/assets/d976577d-d7df-4062-9e12-188a64d49523" />
 
+### Create Provider ( ADMIN ONLY )
+<img width="1356" height="724" alt="Screenshot 2026-04-05 192723" src="https://github.com/user-attachments/assets/d28141be-57d1-461a-85af-72d6ff566d7f" />
+
+### All Provider With Pagination
+<img width="1363" height="720" alt="Screenshot 2026-04-05 193004" src="https://github.com/user-attachments/assets/da5330e4-2c34-48b2-ac93-8bff42ee8cd5" />
+
+### Delete Provider (ADMIN ONLY )
+<img width="1365" height="727" alt="Screenshot 2026-04-05 193204" src="https://github.com/user-attachments/assets/d0ce369e-02a9-440b-8966-6b9add42851e" />
+
+### Create Appointment
+<img width="1360" height="724" alt="Screenshot 2026-04-05 193345" src="https://github.com/user-attachments/assets/6153cb3c-1f38-4e6b-a796-e5b14008f4fe" />
+
+### All Appointment With Pagination
+<img width="1365" height="717" alt="Screenshot 2026-04-05 193535" src="https://github.com/user-attachments/assets/11057ffc-95c9-404e-8f7e-671c3f28adef" />
+
+### Cancle Appointment
+<img width="1341" height="724" alt="Screenshot 2026-04-05 193655" src="https://github.com/user-attachments/assets/a328865a-b31e-44db-800f-a5c08e7f6a9e" />
+
+
 ---
 
 ## ⚡ Highlights
@@ -136,10 +155,3 @@ This project demonstrates **real-world backend development** including authentic
 
 ---
 
-## 🚀 Next Improvements
-
-- Pagination & filtering for appointments and providers  
-- Provider availability slots  
-- Appointment status tracking (pending, confirmed, cancelled)  
-- Admin dashboard endpoints  
-- Background jobs (email reminders, notifications)  
